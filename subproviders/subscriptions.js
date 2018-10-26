@@ -113,7 +113,6 @@ SubscriptionSubprovider.prototype._notificationResultFromBlock = function(block)
     transactionsRoot: utils.bufferToHex(block.transactionsRoot),
     receiptsRoot: utils.bufferToHex(block.receiptsRoot),
     logsBloom: utils.bufferToHex(block.logsBloom),
-    difficulty: from.intToQuantityHex(utils.bufferToInt(block.difficulty)),
     number: from.intToQuantityHex(utils.bufferToInt(block.number)),
     gasLimit: from.intToQuantityHex(utils.bufferToInt(block.gasLimit)),
     gasUsed: from.intToQuantityHex(utils.bufferToInt(block.gasUsed)),
