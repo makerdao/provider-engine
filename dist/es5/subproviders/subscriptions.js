@@ -105,6 +105,11 @@ SubscriptionSubprovider.prototype._notificationHandler = function (hexId, subscr
 };
 
 SubscriptionSubprovider.prototype._notificationResultFromBlock = function (block) {
+  var difficulty = new utils.BN(utils.bufferToHex(block.difficulty), 16);
+  if (difficulty.bitLength() > 53) {
+    block.difficulty = 0;
+  }
+
   return {
     hash: utils.bufferToHex(block.hash),
     parentHash: utils.bufferToHex(block.parentHash),
